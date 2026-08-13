@@ -2,12 +2,14 @@
 
 ## ⚠️ Estado actual: la solución en producción vive en monday.com
 
-Los dos formularios quedaron armados como **formularios de monday.com** (workspace RRHH del tenant `ayomkt`), cada uno con su tablero de respuestas y una automatización que manda un correo a `RRHH@ayomkt.cl` apenas llega una solicitud nueva:
+Los dos formularios quedaron armados como **formularios de monday.com** (workspace RRHH del tenant `ayomkt`), cada uno con su tablero de respuestas y una automatización **nativa de monday.com** ("Notify someone") que notifica a `rrhh@ayomkt.cl` (in-app + a su correo registrado) apenas llega una solicitud nueva:
 
 - **Solicitud General a RRHH** — formulario: `https://forms.monday.com/forms/ca54c382de9ca49cd0e27e67482d9737` · tablero de respuestas: `https://ayomkt.monday.com/boards/18426463663`
 - **Solicitud de Desvinculación de Personal** — formulario: `https://forms.monday.com/forms/697073a29ba1f2303b6ffbefe93d1b26` · tablero de respuestas: `https://ayomkt.monday.com/boards/18426464196`
 
 Se armaron en el workspace **LOGISTICA** (no en el workspace RRHH) porque el usuario que hizo la configuración no tenía permiso de miembro ahí; `rrhh@ayomkt.cl` quedó como dueño/suscriptor de ambos tableros para administrarlos y recibir notificaciones. Quedan pendientes, si se quiere prolijizar: moverlos al workspace RRHH (una vez que se sume como miembro a quien los administra) y agregar alguna vista/dashboard que cruce ambos tableros para el análisis de rotación.
+
+**Por qué notificación nativa y no un correo real vía Outlook/Gmail:** se probaron ambas integraciones de email de monday.com (bloque de Gmail y bloque de Outlook/M365) y las dos fallan en este tenant porque monday.com no logra completar la autenticación con la cuenta de Microsoft/Google (`monday.com is failing to correctly send credentials`, ver https://credentials.m365.app/), incluso después de intentar conectar la cuenta manualmente. Se optó por la acción nativa "Notify someone" apuntando al usuario `rrhh@ayomkt.cl`, que no depende de ninguna cuenta externa y sí funciona (probado con items de prueba, ambos tableros). Si en el futuro se resuelve la conexión de Outlook (puede ser un tema de la app M365 del lado de monday.com, no de configuración), se puede volver a agregar el envío por correo real como complemento.
 
 Nota técnica sobre el formulario de desvinculación: los formularios de monday.com no soportan un desplegable de más de ~25 opciones (falla con error interno), así que el "motivo principal" del Word original (29 opciones agrupadas) se dividió en **Categoría del motivo** (desplegable de 5 opciones) + **Motivo específico** (texto libre) en lugar de una única lista larga.
 
