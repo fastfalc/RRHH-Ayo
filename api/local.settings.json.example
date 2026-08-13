@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "TENANT_ID": "<tenant id de Entra ID>",
+    "CLIENT_ID": "<client id de la app registrada>",
+    "CLIENT_SECRET": "<client secret generado para la app>",
+    "SENDER_UPN": "RRHH@ayomkt.cl",
+    "HR_EMAIL": "RRHH@ayomkt.cl",
+    "ALLOWED_ORIGIN": "https://fastfalc.github.io"
+  }
+}

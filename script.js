@@ -43,7 +43,7 @@ async function sendRequest(data) {
     const response = await fetch(CONFIG.SUBMIT_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ formType: "general", data }),
     });
     if (!response.ok) {
       throw new Error(`Submit failed with status ${response.status}`);
