@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solicitud de Desvinculación de Personal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card card-wide">
+    <nav class="top-nav"><a href="index.html">&larr; Solicitud general</a></nav>
+
+    <header>
+      <h1>Formulario de Solicitud de Desvinculaci&oacute;n de Personal</h1>
+      <p class="subtitle">Completar por Jefatura Directa</p>
+      <p>
+        <strong>Objetivo:</strong> registrar los antecedentes y motivos asociados a la solicitud de
+        desvinculaci&oacute;n de trabajadores, permitiendo a Recursos Humanos evaluar cada caso, mantener
+        respaldo del proceso y analizar las principales causas de rotaci&oacute;n para generar acciones de mejora.
+      </p>
+      <p class="notice">
+        <strong>Importante:</strong> la informaci&oacute;n proporcionada por la jefatura constituye un
+        antecedente para la evaluaci&oacute;n de la solicitud. La causal legal de t&eacute;rmino ser&aacute;
+        revisada y definida por Recursos Humanos seg&uacute;n corresponda.
+      </p>
+    </header>
+
+    <form id="desvinculacion-form" novalidate>
+
+      <fieldset>
+        <legend>1. Datos del trabajador</legend>
+
+        <div class="field">
+          <label for="nombre_trabajador">Nombre completo *</label>
+          <input type="text" id="nombre_trabajador" name="nombre_trabajador" required />
+        </div>
+        <div class="field">
+          <label for="cargo_trabajador">Cargo *</label>
+          <input type="text" id="cargo_trabajador" name="cargo_trabajador" required />
+        </div>
+        <div class="field">
+          <label for="area_trabajador">&Aacute;rea *</label>
+          <input type="text" id="area_trabajador" name="area_trabajador" required />
+        </div>
+        <div class="field">
+          <label for="jefatura_directa">Jefatura directa *</label>
+          <input type="text" id="jefatura_directa" name="jefatura_directa" required />
+        </div>
+        <div class="field">
+          <label for="fecha_solicitud">Fecha de solicitud de desvinculaci&oacute;n *</label>
+          <input type="date" id="fecha_solicitud" name="fecha_solicitud" required />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Modalidad de desvinculaci&oacute;n solicitada</legend>
+        <p class="hint">Seleccione la alternativa propuesta.</p>
+        <div class="radio-group" data-required="modalidad">
+          <label class="radio"><input type="radio" name="modalidad" value="Necesidades de la empresa con aviso previo" required /> Necesidades de la empresa con aviso previo</label>
+          <label class="radio"><input type="radio" name="modalidad" value="Necesidades de la empresa sin aviso previo" /> Necesidades de la empresa sin aviso previo</label>
+          <label class="radio"><input type="radio" name="modalidad" value="Término de contrato a plazo" /> T&eacute;rmino de contrato a plazo</label>
+          <label class="radio"><input type="radio" name="modalidad" value="Otra / Por definir con RR.HH." /> Otra / Por definir con RR.HH.</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Motivo principal de la solicitud</legend>
+        <p class="hint">Seleccione un solo motivo principal, considerando aquel que mejor representa la raz&oacute;n de la solicitud.</p>
+        <div class="field">
+          <label for="motivo_principal">Motivo principal *</label>
+          <select id="motivo_principal" name="motivo_principal" required>
+            <option value="" disabled selected>Seleccion&aacute; un motivo</option>
+            <optgroup label="Desempeño">
+              <option>Bajo desempeño</option>
+              <option>Incumplimiento de funciones</option>
+              <option>Incumplimiento de objetivos o indicadores</option>
+              <option>Falta de competencias técnicas</option>
+              <option>Errores reiterados</option>
+              <option>Baja productividad</option>
+              <option>Falta de autonomía</option>
+              <option>Dificultad para adaptarse al cargo</option>
+            </optgroup>
+            <optgroup label="Responsabilidad y cumplimiento">
+              <option>Atrasos reiterados</option>
+              <option>Inasistencias reiteradas</option>
+              <option>Incumplimiento de horarios</option>
+              <option>Incumplimiento de instrucciones</option>
+              <option>Incumplimiento de procedimientos internos</option>
+              <option>Incumplimiento de normas de seguridad</option>
+              <option>Falta de compromiso o responsabilidad</option>
+            </optgroup>
+            <optgroup label="Conducta y relaciones laborales">
+              <option>Problemas de conducta</option>
+              <option>Conflictos con compañeros</option>
+              <option>Conflictos con jefatura</option>
+              <option>Dificultades para trabajar en equipo</option>
+              <option>Problemas de comunicación</option>
+              <option>Actitud inadecuada</option>
+              <option>Incumplimiento del Reglamento Interno</option>
+            </optgroup>
+            <optgroup label="Motivos organizacionales">
+              <option>Reestructuración</option>
+              <option>Eliminación del cargo</option>
+              <option>Reducción de dotación</option>
+              <option>Cambio en las necesidades del área</option>
+              <option>Cargo ya no requerido</option>
+            </optgroup>
+            <optgroup label="Otro">
+              <option>Otro motivo no contemplado anteriormente</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="field">
+          <label for="motivo_otro_detalle">Si seleccion&oacute; "Otro", especifique</label>
+          <input type="text" id="motivo_otro_detalle" name="motivo_otro_detalle" />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Factores asociados</legend>
+        <p class="hint">Adem&aacute;s del motivo principal, ¿identifica otros factores que hayan influido en la decisi&oacute;n? Puede seleccionar m&aacute;s de una alternativa.</p>
+        <div class="checkbox-group">
+          <label class="checkbox"><input type="checkbox" name="factores" value="Desempeño" /> Desempeño</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Calidad del trabajo" /> Calidad del trabajo</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Productividad" /> Productividad</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Asistencia" /> Asistencia</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Puntualidad" /> Puntualidad</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Compromiso" /> Compromiso</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Responsabilidad" /> Responsabilidad</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Conducta" /> Conducta</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Relación con el equipo" /> Relaci&oacute;n con el equipo</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Relación con la jefatura" /> Relaci&oacute;n con la jefatura</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Comunicación" /> Comunicaci&oacute;n</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Adaptación al cargo" /> Adaptaci&oacute;n al cargo</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Competencias técnicas" /> Competencias t&eacute;cnicas</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Cumplimiento de instrucciones" /> Cumplimiento de instrucciones</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Cumplimiento de procedimientos" /> Cumplimiento de procedimientos</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Cumplimiento de normas de seguridad" /> Cumplimiento de normas de seguridad</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Organización o estructura del área" /> Organizaci&oacute;n o estructura del &aacute;rea</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Cambio en las necesidades del área" /> Cambio en las necesidades del &aacute;rea</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Ninguno" /> Ninguno</label>
+          <label class="checkbox"><input type="checkbox" name="factores" value="Otro" /> Otro</label>
+        </div>
+        <div class="field">
+          <label for="factores_detalle">Detalle adicional</label>
+          <input type="text" id="factores_detalle" name="factores_detalle" />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Antecedentes y gestiones previas</legend>
+
+        <div class="field">
+          <label>¿La situaci&oacute;n que origina esta solicitud hab&iacute;a sido conversada previamente con el trabajador?</label>
+          <div class="radio-group">
+            <label class="radio"><input type="radio" name="conversado_previamente" value="Sí" /> S&iacute;</label>
+            <label class="radio"><input type="radio" name="conversado_previamente" value="No" /> No</label>
+            <label class="radio"><input type="radio" name="conversado_previamente" value="No aplica" /> No aplica</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>¿El trabajador recibi&oacute; retroalimentaci&oacute;n respecto de la situaci&oacute;n?</label>
+          <div class="radio-group">
+            <label class="radio"><input type="radio" name="retroalimentacion" value="Sí" /> S&iacute;</label>
+            <label class="radio"><input type="radio" name="retroalimentacion" value="No" /> No</label>
+            <label class="radio"><input type="radio" name="retroalimentacion" value="No aplica" /> No aplica</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>¿Se realizaron acciones para intentar mejorar la situaci&oacute;n antes de solicitar la desvinculaci&oacute;n?</label>
+          <div class="radio-group">
+            <label class="radio"><input type="radio" name="acciones_previas" value="Sí" /> S&iacute;</label>
+            <label class="radio"><input type="radio" name="acciones_previas" value="No" /> No</label>
+            <label class="radio"><input type="radio" name="acciones_previas" value="No aplica" /> No aplica</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>En caso afirmativo, indique cu&aacute;les</label>
+          <div class="checkbox-group">
+            <label class="checkbox"><input type="checkbox" name="acciones_realizadas" value="Conversación con jefatura" /> Conversaci&oacute;n con jefatura</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_realizadas" value="Retroalimentación formal" /> Retroalimentaci&oacute;n formal</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_realizadas" value="Reunión con RR.HH." /> Reuni&oacute;n con RR.HH.</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_realizadas" value="Capacitación" /> Capacitaci&oacute;n</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_realizadas" value="Acompañamiento" /> Acompa&ntilde;amiento</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_realizadas" value="Cambio o ajuste de funciones" /> Cambio o ajuste de funciones</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_realizadas" value="Plan de mejora" /> Plan de mejora</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_realizadas" value="Advertencia verbal" /> Advertencia verbal</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_realizadas" value="Solicitud de amonestación" /> Solicitud de amonestaci&oacute;n</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_realizadas" value="Carta de amonestación" /> Carta de amonestaci&oacute;n</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_realizadas" value="Otro" /> Otro</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>¿Existen respaldos o evidencias de las situaciones informadas?</label>
+          <div class="radio-group">
+            <label class="radio"><input type="radio" name="respaldos_existen" value="Sí" /> S&iacute;</label>
+            <label class="radio"><input type="radio" name="respaldos_existen" value="No" /> No</label>
+            <label class="radio"><input type="radio" name="respaldos_existen" value="No aplica" /> No aplica</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Indique los respaldos disponibles</label>
+          <div class="checkbox-group">
+            <label class="checkbox"><input type="checkbox" name="respaldos_disponibles" value="Correos" /> Correos</label>
+            <label class="checkbox"><input type="checkbox" name="respaldos_disponibles" value="Cartas de amonestación" /> Cartas de amonestaci&oacute;n</label>
+            <label class="checkbox"><input type="checkbox" name="respaldos_disponibles" value="Evaluaciones de desempeño" /> Evaluaciones de desempe&ntilde;o</label>
+            <label class="checkbox"><input type="checkbox" name="respaldos_disponibles" value="Registros de asistencia" /> Registros de asistencia</label>
+            <label class="checkbox"><input type="checkbox" name="respaldos_disponibles" value="Registros de atrasos" /> Registros de atrasos</label>
+            <label class="checkbox"><input type="checkbox" name="respaldos_disponibles" value="Comunicaciones laborales" /> Comunicaciones laborales</label>
+            <label class="checkbox"><input type="checkbox" name="respaldos_disponibles" value="Indicadores/KPI" /> Indicadores/KPI</label>
+            <label class="checkbox"><input type="checkbox" name="respaldos_disponibles" value="Informes" /> Informes</label>
+            <label class="checkbox"><input type="checkbox" name="respaldos_disponibles" value="Registros de reuniones" /> Registros de reuniones</label>
+            <label class="checkbox"><input type="checkbox" name="respaldos_disponibles" value="Otros" /> Otros</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. Evaluaci&oacute;n general del trabajador</legend>
+        <p class="hint">Eval&uacute;e al trabajador considerando su desempe&ntilde;o durante el per&iacute;odo trabajado.</p>
+        <div class="table-scroll">
+          <table class="eval-table">
+            <thead>
+              <tr><th>Aspecto</th><th>Bueno</th><th>Regular</th><th>Deficiente</th><th>No aplica</th></tr>
+            </thead>
+            <tbody id="eval-table-body"></tbody>
+          </table>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>7. An&aacute;lisis de la jefatura</legend>
+
+        <div class="field">
+          <label>¿Considera que esta desvinculaci&oacute;n podr&iacute;a haberse evitado mediante acciones previas?</label>
+          <div class="radio-group">
+            <label class="radio"><input type="radio" name="evitable" value="Sí" /> S&iacute;</label>
+            <label class="radio"><input type="radio" name="evitable" value="No" /> No</label>
+            <label class="radio"><input type="radio" name="evitable" value="Parcialmente" /> Parcialmente</label>
+            <label class="radio"><input type="radio" name="evitable" value="No es posible determinarlo" /> No es posible determinarlo</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Si considera que era evitable o parcialmente evitable, ¿qu&eacute; acciones podr&iacute;an haber contribuido a mejorar la situaci&oacute;n?</label>
+          <div class="checkbox-group">
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="Mayor acompañamiento de la jefatura" /> Mayor acompa&ntilde;amiento de la jefatura</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="Mayor capacitación" /> Mayor capacitaci&oacute;n</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="Mejor proceso de inducción" /> Mejor proceso de inducci&oacute;n</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="Mayor claridad de funciones y responsabilidades" /> Mayor claridad de funciones y responsabilidades</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="Retroalimentación más frecuente" /> Retroalimentaci&oacute;n m&aacute;s frecuente</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="Ajuste de carga de trabajo" /> Ajuste de carga de trabajo</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="Cambio o ajuste de funciones" /> Cambio o ajuste de funciones</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="Oportunidades de desarrollo" /> Oportunidades de desarrollo</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="Revisión de remuneración" /> Revisi&oacute;n de remuneraci&oacute;n</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="Mejoras en la comunicación" /> Mejoras en la comunicaci&oacute;n</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="Mejoras en el ambiente o funcionamiento del equipo" /> Mejoras en el ambiente o funcionamiento del equipo</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="Otra" /> Otra</label>
+            <label class="checkbox"><input type="checkbox" name="acciones_mejora" value="No aplica" /> No aplica</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Considerando su experiencia laboral en la empresa, ¿recomendar&iacute;a volver a contratar a esta persona en el futuro?</label>
+          <div class="radio-group">
+            <label class="radio"><input type="radio" name="recontrataria" value="Sí" /> S&iacute;</label>
+            <label class="radio"><input type="radio" name="recontrataria" value="No" /> No</label>
+            <label class="radio"><input type="radio" name="recontrataria" value="Evaluaría según el cargo o las circunstancias" /> Evaluar&iacute;a seg&uacute;n el cargo o las circunstancias</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>¿Se requiere reemplazo para esta posici&oacute;n?</label>
+          <div class="radio-group">
+            <label class="radio"><input type="radio" name="requiere_reemplazo" value="Sí, inmediato" /> S&iacute;, inmediato</label>
+            <label class="radio"><input type="radio" name="requiere_reemplazo" value="Sí, pero no inmediato" /> S&iacute;, pero no inmediato</label>
+            <label class="radio"><input type="radio" name="requiere_reemplazo" value="No" /> No</label>
+            <label class="radio"><input type="radio" name="requiere_reemplazo" value="Por definir" /> Por definir</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>8. Comentarios y fundamento de la solicitud</legend>
+        <div class="field">
+          <label for="comentarios">Describa brevemente los hechos y antecedentes relevantes que permitan comprender y respaldar la solicitud. Se recomienda indicar situaciones concretas, fechas aproximadas y acciones realizadas previamente. *</label>
+          <textarea id="comentarios" name="comentarios" rows="6" required></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Responsable de la solicitud</legend>
+        <div class="field">
+          <label for="responsable_nombre">Nombre de quien completa el formulario *</label>
+          <input type="text" id="responsable_nombre" name="responsable_nombre" required />
+        </div>
+        <div class="field">
+          <label for="responsable_cargo">Cargo *</label>
+          <input type="text" id="responsable_cargo" name="responsable_cargo" required />
+        </div>
+        <div class="field">
+          <label for="responsable_fecha">Fecha *</label>
+          <input type="date" id="responsable_fecha" name="responsable_fecha" required />
+        </div>
+        <div class="field">
+          <label for="jefatura_conocimiento">Jefatura / Gerencia que toma conocimiento</label>
+          <input type="text" id="jefatura_conocimiento" name="jefatura_conocimiento" />
+        </div>
+        <div class="field">
+          <label for="fecha_conocimiento">Fecha</label>
+          <input type="date" id="fecha_conocimiento" name="fecha_conocimiento" />
+        </div>
+      </fieldset>
+
+      <button type="submit">Enviar solicitud a RR.HH.</button>
+      <p id="form-status" class="status" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script src="desvinculacion.js"></script>
+</body>
+</html>
