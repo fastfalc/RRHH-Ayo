@@ -1,5 +1,20 @@
 # RRHH-Ayo
 
+## ⚠️ Estado actual: la solución en producción vive en monday.com
+
+Los dos formularios quedaron armados como **formularios de monday.com** (workspace RRHH del tenant `ayomkt`), cada uno con su tablero de respuestas y una automatización que manda un correo a `RRHH@ayomkt.cl` apenas llega una solicitud nueva:
+
+- **Solicitud General a RRHH** — formulario: `https://forms.monday.com/forms/ca54c382de9ca49cd0e27e67482d9737` · tablero de respuestas: `https://ayomkt.monday.com/boards/18426463663`
+- **Solicitud de Desvinculación de Personal** — formulario: `https://forms.monday.com/forms/697073a29ba1f2303b6ffbefe93d1b26` · tablero de respuestas: `https://ayomkt.monday.com/boards/18426464196`
+
+Se armaron en el workspace **LOGISTICA** (no en el workspace RRHH) porque el usuario que hizo la configuración no tenía permiso de miembro ahí; `rrhh@ayomkt.cl` quedó como dueño/suscriptor de ambos tableros para administrarlos y recibir notificaciones. Quedan pendientes, si se quiere prolijizar: moverlos al workspace RRHH (una vez que se sume como miembro a quien los administra) y agregar alguna vista/dashboard que cruce ambos tableros para el análisis de rotación.
+
+Nota técnica sobre el formulario de desvinculación: los formularios de monday.com no soportan un desplegable de más de ~25 opciones (falla con error interno), así que el "motivo principal" del Word original (29 opciones agrupadas) se dividió en **Categoría del motivo** (desplegable de 5 opciones) + **Motivo específico** (texto libre) en lugar de una única lista larga.
+
+## Este repositorio (versión HTML + Azure, sin usar actualmente)
+
+Antes de migrar a monday.com se habían armado los mismos dos formularios como páginas HTML estáticas, pensadas para conectarse a Outlook/Office 365 vía Microsoft Graph API. Se dejan en el repo como referencia por si en el futuro conviene volver a ese enfoque (por ejemplo si se preferiera no depender de monday.com), pero **hoy no están desplegadas ni en uso**.
+
 Formularios de RRHH.
 
 - `index.html` &mdash; Solicitud General a RRHH.
