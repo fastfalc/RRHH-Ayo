@@ -1,7 +1,7 @@
 // Configuracion del formulario de RRHH.
 // Completar HR_EMAIL con el correo Microsoft (Outlook/Office 365) de la persona de RRHH.
 const CONFIG = {
-  HR_EMAIL: "rrhh@ayo.com.ar", // TODO: reemplazar por el correo real
+  HR_EMAIL: "RRHH@ayomkt.cl",
   // Cuando haya un backend (Microsoft Graph API o Power Automate), completar esta URL
   // y sendRequest() hara un POST en lugar de abrir el cliente de correo.
   SUBMIT_ENDPOINT: null,

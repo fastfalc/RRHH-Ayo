@@ -4,7 +4,7 @@ Formulario de Solicitud General a RRHH.
 
 ## Uso
 
-Abrir `index.html` en el navegador (o publicarlo en cualquier hosting est&aacute;tico: GitHub Pages, Netlify, etc.). El empleado completa el formulario y, al enviar, hoy se abre su cliente de correo con el mensaje precargado hacia `rrhh@ayo.com.ar` (configurable en `script.js`, constante `CONFIG.HR_EMAIL`).
+Abrir `index.html` en el navegador (o publicarlo en cualquier hosting est&aacute;tico: GitHub Pages, Netlify, etc.). El empleado completa el formulario y, al enviar, hoy se abre su cliente de correo con el mensaje precargado hacia `RRHH@ayomkt.cl` (configurable en `script.js`, constante `CONFIG.HR_EMAIL`).
 
 ## C&oacute;mo conectarlo al correo Microsoft (Outlook / Office 365) de RRHH
 
